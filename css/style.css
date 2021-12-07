@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* || Primary colors */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --cyan-hover: hsla(178, 100%, 50%,0.6);
+
+    /* || Neutral colors */
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    /* || Font size paragraph */
+    --fs-para: 18px;
+}
+
+/* || Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+body{
+    font-family: Outfit, sans-serif;
+    font-weight: 300;
+
+    background-color: var(--main-bg);
+    color: var(--soft-blue);
+}
+
+.card {
+	background-color: var(--card-bg);
+	width: 85%;
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	max-height: 35rem;
+	border-radius: 10px;
+	padding: 1rem;
+
+    box-shadow: 0px 0px 50px black;
+}
+
+.nft__img {
+	margin-bottom: 1.5rem;
+}
+
+.nft__img img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.nft__img__active {
+	background-color: var(--cyan-hover);
+	height: 51.2%;
+	position: absolute;
+	z-index: 99;
+	width: 90%;
+	border-radius: 10px;
+    opacity: 0;
+}
+
+.nft__img__active::after {
+	content: url("../images/icon-view.svg");
+	position: relative;
+	left: 42%;
+	top: 42%;
+	opacity: 1;
+}
+
+.nft__img__active:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.nft__title{
+    font-weight: 600;
+    color:var(--white);
+    margin-bottom: 1rem;
+}
+
+.nft__value{
+    font-weight: 600;
+    color: var(--cyan);
+}
+
+.nft__author{
+    font-weight: 400;
+}
+
+.nft__author img{
+    width: 10%;
+    vertical-align: middle;
+    margin-right: 1rem;
+    outline: var(--white) 0.05rem solid;
+    border-radius: 100%;
+}
+
+.nft__description{
+    font-size: var(--fs-para);
+    margin-bottom: 1rem;
+    line-height: 2rem;
+}
+
+.nft__infos {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.nft__infos img{
+    vertical-align: middle;
+}
+
+hr{
+    color: var(--line);
+    margin-bottom: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover{
+    color: var(--cyan);
+}
+
+/* || Responsive design Desktop */
+@media (min-width: 1150px){
+    .card {
+        background-color: var(--card-bg);
+        width: 22%;
+    }
+}
